@@ -21,7 +21,7 @@ Basierend auf Bitcoin.
 
 Projekt klonen
 ```bash
-  git clone https://github.com/DerEmox/info_gfs_bytecoin.git
+  git clone https://github.com/DerEwox/info_gfs.git
 ```
 
 Zum Projektverzeichnis navigieren
