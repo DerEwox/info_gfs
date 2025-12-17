@@ -27,7 +27,7 @@ Projekt klonen
 Zum Projektverzeichnis navigieren
 
 ```bash
-  cd info_gfs_bytecoin
+  cd info_gfs
 ```
 
 Abhängigkeiten installieren (Node.js v23)
