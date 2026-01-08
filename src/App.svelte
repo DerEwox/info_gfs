@@ -44,6 +44,16 @@
     }
   }
 
+
+  function calcReward(transactions:string):number {
+    let reward = 0;
+    const txParsed = JSON.parse(transactions)
+    for (const tx of txParsed) {
+      reward += tx.fee;
+    }
+    return reward + 10;
+  }
+
   let randomTransactionCount = 40;
   function addRandomTransaction() {
     const count = randomTransactionCount;
@@ -87,6 +97,13 @@
     minerState = "stopped";
 
     blockchain.addBlock(result.minedBlock!);
+
+    users[winningMiner.id].balance += calcReward(result.minedBlock!.transactions)
+
+    console.log("Last Blokchain:", blockchain.chain[blockchain.chain.length-1]);
+    console.log("Tx parsed: ", JSON.parse(result.minedBlock!.transactions));
+
+
 
     mempool.remove(JSON.parse(result.minedBlock!.transactions));
     for (let i = 0; i < users.length; i++) {
