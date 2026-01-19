@@ -59,11 +59,12 @@ export class Miner {
 
       this.hash = await this.calculateHash(JSON.stringify(block));
       this.addLog(this.minerId)
+      console.log(`Miner ${this.minerId} trying nonce ${this.nonce}: ${this.hash}`);
     }
     const endtime = Date.now() - startTime
 
     const minedBlock: minedBlock = {...block!, hash: this.hash }
-    let out = { hash: this.hash, time: endtime / 1000, nonce: this.nonce, minedBlock: this.stopped ? undefined : minedBlock };
+    let out = { hash: this.hash, time: endtime, nonce: this.nonce, minedBlock: this.stopped ? undefined : minedBlock };
     this.hash = ""
 
     return out

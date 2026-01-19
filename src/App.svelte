@@ -241,9 +241,7 @@
       {/if}
 
     {:else if screen === "Mempool"}
-      <button class="toggleTransactionMenu" on:click={startMining}
-        >Start Mining</button
-      >
+
       <div class="mempool-interface">
         <h3 style="flex-basis: 100%;">Memory-Pool</h3>
         <div class="MempoolTransactions">
@@ -251,6 +249,9 @@
         </div>
       </div>
     {:else if screen === "Miner"}
+          <button class="toggleTransactionMenu" on:click={startMining}
+        >Start Mining</button
+      >
       <div class="transaction-interface">
         <div class="transaction-user">
           <h3>
